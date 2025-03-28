@@ -1,23 +1,32 @@
-const js = require('@eslint/js');
-const globals = require('globals');
-const reactHooks = require('eslint-plugin-react-hooks');
-const reactRefresh = require('eslint-plugin-react-refresh');
-const tseslint = require('typescript-eslint');
-const unusedImports = require('eslint-plugin-unused-imports');
-const noRelativeImportPaths = require('eslint-plugin-no-relative-import-paths');
-const importPlugin = require('eslint-plugin-import');
-const react = require('eslint-plugin-react');
-const jsxA11y = require('eslint-plugin-jsx-a11y');
+import js from '@eslint/js';
+import globals from 'globals';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import * as tseslint from 'typescript-eslint';
+import unusedImports from 'eslint-plugin-unused-imports';
+import noRelativeImportPaths from 'eslint-plugin-no-relative-import-paths';
+import importPlugin from 'eslint-plugin-import';
+import react from 'eslint-plugin-react';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 
 /** @type {import('eslint').Linter.Config} */
-module.exports = tseslint.config(
+export default tseslint.config(
     js.configs.recommended,
     jsxA11y.flatConfigs.recommended,
     {
-        ignores: ['node_modules', '.env.*', '*.log', '*.json', '*.config.*', '*.md'],
+        ignores: [
+            'node_modules',
+            '.env.*',
+            '*.log',
+            '*.json',
+            '*.config.*',
+            '*.md',
+            '.vite/**',
+            'dist/**',
+        ],
     },
     {
-        files: ['**/*.{ts,tsx,js,jsx}'],
+        files: ['src/**/*.{ts,tsx,js,jsx}'],
         languageOptions: {
             ecmaVersion: 'latest',
             sourceType: 'module',
@@ -76,7 +85,10 @@ module.exports = tseslint.config(
                 },
             ],
             'unused-imports/no-unused-imports': 'warn',
-            'no-relative-import-paths/no-relative-import-paths': ['error', { allowSameFolder: true }],
+            'no-relative-import-paths/no-relative-import-paths': [
+                'error',
+                { allowSameFolder: true },
+            ],
             'import/no-anonymous-default-export': 'off',
 
             // TypeScript 규칙
