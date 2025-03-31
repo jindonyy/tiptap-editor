@@ -11,8 +11,6 @@ import jsxA11y from 'eslint-plugin-jsx-a11y';
 
 /** @type {import('eslint').Linter.Config} */
 export default tseslint.config(
-    js.configs.recommended,
-    jsxA11y.flatConfigs.recommended,
     {
         ignores: [
             'node_modules',
@@ -26,6 +24,7 @@ export default tseslint.config(
         ],
     },
     {
+        extends: [js.configs.recommended, ...tseslint.configs.recommended],
         files: ['src/**/*.{ts,tsx,js,jsx}'],
         languageOptions: {
             ecmaVersion: 'latest',
@@ -40,6 +39,7 @@ export default tseslint.config(
             globals: {
                 ...globals.browser,
                 ...globals.serviceworker,
+                React: 'readonly',
             },
         },
         plugins: {

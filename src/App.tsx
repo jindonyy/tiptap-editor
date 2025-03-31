@@ -1,14 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import '@/styles/reset.css';
+import Editor from '@/components/Editor/Editor';
 
 function App() {
-  return (
-    <>
-      <h1>Vite + React</h1>
-    </>
-  )
+    return (
+        <div className="App">
+            <Editor />
+        </div>
+    );
 }
 
-export default App
+export default App;

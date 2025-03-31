@@ -1,0 +1,27 @@
+.toolbar-button {
+    padding: 4px 10px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 30px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+}
+
+.toolbar-button:hover {
+    background-color: #f0f0f0;
+}
+
+.toolbar-button.active {
+    background-color: #e3e3e3;
+    border-color: #aaa;
+}
+
+.toolbar-button .dropdown-icon {
+    margin-left: 4px;
+    font-size: 12px;
+}

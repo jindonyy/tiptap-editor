@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
+button:focus {
+    outline: none;
+}
+
+input {
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+}
+
+input:focus {
+    outline: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Remove default focus styles for mouse users ONLY if :focus-visible is supported */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Show focus styles on keyboard focus if :focus-visible is supported */
+:focus-visible {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
