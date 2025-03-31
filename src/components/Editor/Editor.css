@@ -12,6 +12,10 @@
     outline: none;
 }
 
+.ProseMirror ::selection {
+    background-color: #d9eddf;
+}
+
 .ProseMirror > * + * {
     margin-top: 0.75em;
 }
@@ -30,24 +34,59 @@
     line-height: 1.1;
 }
 
-.ProseMirror code {
-    background-color: rgba(97, 97, 97, 0.1);
-    color: #616161;
-    padding: 0.25em;
-    border-radius: 0.25em;
+.ProseMirror table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
 }
 
-.ProseMirror pre {
-    background: #0d0d0d;
-    color: #fff;
-    font-family: 'JetBrainsMono', monospace;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
+.ProseMirror table th {
+    font-weight: 500;
+    background-color: #f4f4f4;
 }
 
-.ProseMirror pre code {
-    color: inherit;
-    padding: 0;
-    background: none;
-    font-size: 0.8rem;
+.ProseMirror table th,
+.ProseMirror table td {
+    position: relative;
+    padding: 8px;
+    border: 1px solid #ddd !important;
+    border: 1px solid #ccc;
+    padding: 8px;
+    min-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ProseMirror table .column-resize-handle {
+    cursor: col-resize;
+}
+
+.ProseMirror table .column-resize-handle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #d2d2d2;
+    z-index: 10;
+}
+
+.ProseMirror table .selectedCell:after {
+    background-color: #ddd;
+    opacity: 0.5;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+}
+
+.editor-wrapper.resize-cursor {
+    cursor: ew-resize;
+    cursor: col-resize;
 }

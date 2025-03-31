@@ -128,6 +128,40 @@ export function Toolbar({ editor }: ToolbarProps) {
                     onClick={() => editor.chain().focus().toggleOrderedList().run()}
                 />
             </div>
+
+            <div className="toolbar-group">
+                <ToolbarButton
+                    icon="fa-table"
+                    title="테이블 삽입"
+                    onClick={() =>
+                        editor
+                            .chain()
+                            .focus()
+                            .insertTable({ rows: 3, cols: 3, withHeaderRow: true })
+                            .run()
+                    }
+                />
+                <ToolbarButton
+                    icon="fa-columns"
+                    title="열 추가"
+                    onClick={() => editor.chain().focus().addColumnBefore().run()}
+                />
+                <ToolbarButton
+                    icon="fa-columns"
+                    title="열 삭제"
+                    onClick={() => editor.chain().focus().deleteColumn().run()}
+                />
+                <ToolbarButton
+                    icon="fa-arrows-alt-v"
+                    title="행 추가"
+                    onClick={() => editor.chain().focus().addRowBefore().run()}
+                />
+                <ToolbarButton
+                    icon="fa-arrows-alt-v"
+                    title="행 삭제"
+                    onClick={() => editor.chain().focus().deleteRow().run()}
+                />
+            </div>
         </div>
     );
 }
