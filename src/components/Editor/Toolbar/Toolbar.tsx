@@ -28,7 +28,7 @@ export function Toolbar({ editor }: ToolbarProps) {
                 editor.chain().focus().toggleHeading({ level: 3 }).run();
                 break;
             default:
-                editor.chain().focus().setParagraph().run();
+                editor.chain().focus().setNode('paragraph').run();
         }
     };
 
