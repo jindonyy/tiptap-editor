@@ -1,3 +1,4 @@
+import Link from '@tiptap/extension-link';
 import Table from '@tiptap/extension-table';
 import TableCell from '@tiptap/extension-table-cell';
 import TableHeader from '@tiptap/extension-table-header';
@@ -27,8 +28,10 @@ function Editor() {
             TableRow,
             TableHeader,
             TableCell,
+            Link,
         ],
-        content: '<p>Hello World! 👋</p>',
+        injectCSS: false,
+        content: '',
     });
 
     if (!editor) return null;
